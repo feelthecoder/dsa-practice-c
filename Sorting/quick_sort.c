@@ -1,27 +1,22 @@
 #include<stdio.h>
 
-void Swap(int * a, int *b)
-{
-  int temp;
-  temp = *a;
-  *a = *b;
-  *b = temp;
-}
-
-
 int Partition (int arr[], int low, int high)
 {
-	int j;
+	int j,temp;
   int pivot = arr[high];
  
   int i = (low - 1);
   for ( j = low; j <= (high - 1); j++) {
     if (arr[j] <= pivot) {
       i++;   
-      Swap (&arr[i], &arr[j]); 
+      temp = arr[i];
+      arr[i]=arr[j];
+      arr[j]=temp;
     }
   }
-  Swap(&arr[i + 1], &arr[high]); 
+      temp = arr[i+1];
+      arr[i+1]=arr[high];
+      arr[high]=temp;
   return (i + 1);
 }
 

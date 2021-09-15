@@ -30,20 +30,14 @@ int main(){
 	printf("Enter the Array elements :");
 	
 	for(i=0;i<n;i++)
-	     scanf("%d ",&A[i]);
+	     scanf("%d",&A[i]);
 	     
-	printf("UnSorted Array : ");
-	
-	for(i=0;i<n;i++)
-		printf("%d  ",A[i]);     
-		
-		
 	insertion_sort(A,n);
 	
 	printf("Sorted Array : ");
 	
 	for(i=0;i<n;i++)
-		printf("%d  ",A[i]);
+		printf("%d ",A[i]);
 		
 	return 0;
 	

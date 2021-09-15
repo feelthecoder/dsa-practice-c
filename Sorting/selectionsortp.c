@@ -1,11 +1,5 @@
 #include <stdio.h> 
-  
-void swap(int *xp, int *yp) 
-{ 
-    int temp = *xp; 
-    *xp = *yp; 
-    *yp = temp; 
-} 
+
   
 void selectionSort(int arr[], int n) 
 { 
@@ -20,26 +14,21 @@ void selectionSort(int arr[], int n)
           if (arr[j] < arr[min_idx]) 
             min_idx = j; 
 
-        swap(&arr[min_idx], &arr[i]); 
+    int temp = arr[min_idx]; 
+    arr[min_idx] = arr[i]; 
+    arr[i] = temp;  
     } 
-} 
-  
-
-void printArray(int arr[], int size) 
-{ 
-    int i; 
-    for (i=0; i < size; i++) 
-        printf("%d ", arr[i]); 
-    printf("\n"); 
 } 
   
  
 int main() 
 { 
-    int arr[] = {64, 25, 12, 22, 11}; 
+    int arr[] = {64, 25, 12, 22, 11,89,52,4,6,3},i; 
     int n = sizeof(arr)/sizeof(arr[0]); 
     selectionSort(arr, n); 
     printf("Sorted array: \n"); 
-    printArray(arr, n); 
+    for (i=0; i < n; i++) 
+        printf("%d ", arr[i]); 
+    printf("\n"); 
     return 0; 
 } 
